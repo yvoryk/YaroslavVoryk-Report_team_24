@@ -7,8 +7,12 @@ def encode_password(password):
     return encoded
 
 
-# def decode_password(encoded_password):
-# (Mateo Bodon)
+def decode_password(encoded_password):
+    decoded = ""
+    for char in encoded_password:
+        decoded += str((int(char) - 3) % 10)
+    return decoded
+
 
 
 def main():
@@ -26,8 +30,7 @@ def main():
             encoded_password = encode_password(password)
             print("Your password has been encoded and stored!")
         if option == "2":
-
-            pass  # (Mateo Bodon)
+            print(f"The encoded password is {encoded_password}, and the original password is {decode_password(encoded_password)}.")
         elif option == "3":
             break
 
